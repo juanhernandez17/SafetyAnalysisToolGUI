@@ -1,0 +1,5 @@
+# The .gitignore file is a text file that tells Git (repo) which files or folders to ignore in a specific project.
+# Ignore the __pycache__/ is a folder containing Python 3 bytecode compiled (builded) and ready to be executed (run).
+__pycache__/
+# vs Code extension settings to format HTML code
+.jsbeautifyrc

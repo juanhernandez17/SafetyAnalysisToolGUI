@@ -1,0 +1,33 @@
+{% extends 'login/user.html' %}
+{%block form%}
+{% load crispy_forms_tags %}
+
+
+<div class="row">
+	<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+		<div class="card card-signin my-5">
+			<div class="card-body">
+				<h5 class="card-title text-center">Register</h5>
+				<div>
+					<form method="POST">
+						{%csrf_token%}
+						{% url 'login' as login_url %}
+						<fieldset class="form-group">
+							{{ form|crispy }}
+						</fieldset>
+						<div>
+							<button class="btn-outline-info" type="submut">Sign Up</button>
+						</div>
+					</form>
+					<div class="border-top pt-3">
+						<small class="text-muted">
+							Already Have an Account? <a class="ml-2" href="{{login_url}}">Sign in</a>
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

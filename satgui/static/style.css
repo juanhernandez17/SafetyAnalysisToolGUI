@@ -1,0 +1,361 @@
+/* Defaults
+-------------------------------------------------- */
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
+
+body {
+  background: #f8f8f8;
+}
+
+main {
+  padding-top: 1rem;
+
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+}
+
+/* Navbar
+-------------------------------------------------- */
+nav {
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+
+}
+
+.nav-link {
+  color: aliceblue;
+}
+
+.navlogo {
+  height: 2.4em;
+  width: 4.5em;
+  display: block;
+}
+
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: auto;
+  border-radius: 2rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: var(--input-padding-y) var(--input-padding-x);
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  /* Override default `<label>` margin */
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+
+.btn-google {
+  color: white;
+  background-color: #ea4335;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+
+@supports (-ms-ime-align: auto) {
+  .form-label-group>label {
+    display: none;
+  }
+
+  .form-label-group input::-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+/* Fallback for IE
+-------------------------------------------------- */
+
+@media all and (-ms-high-contrast: none),
+(-ms-high-contrast: active) {
+  .form-label-group>label {
+    display: none;
+  }
+
+  .form-label-group input:-ms-input-placeholder {
+    color: #777;
+  }
+}
+
+/* Style for side bar 
+---------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: #f3f5f9;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+}
+
+.SAT_logo {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.wrapper .sidebar {
+  width: 25%;
+  height: 100%;
+  background-color: #2a2a72;
+  background-image: linear-gradient(315deg, #2a2a72 0%, #009ffd 74%);
+  padding: 30px 0px;
+  position: fixed;
+}
+
+.wrapper .sidebar ul li:hover {
+  background-color: grey;
+}
+
+.wrapper .sidebar ul li {
+  padding: 15px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.wrapper .sidebar a {
+
+  display: block;
+  color: #ffffff;
+}
+
+.wrapper .sidebar h2 {
+  margin: 30px;
+  color: #ffffff;
+}
+
+/* Style SRD 
+---------------------------------------------------*/
+.ttpic {
+
+  background-color: rgb(0, 0, 0);
+  float: left;
+  margin-bottom: 1em;
+  max-width: auto;
+  background-size: contain;
+}
+
+table td {
+  position: relative;
+}
+
+table th {
+  position: relative;
+}
+
+table td input {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+table th input {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  border: none;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Style SAT 
+---------------------------------------------------*/
+
+#sysList {
+  min-height: 75vh;
+  max-height: 75vh;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  background: #f8f8f8;
+}
+
+/*
+CARD Home page style
+*/
+.my_row {
+  margin-bottom: 25px;
+
+}
+
+.my_container {
+  height: 100px;
+
+}
+
+.my_card {
+  height: 350px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.my_card-body {
+  border-radius: 25px;
+}
+
+.plus_body {
+
+  border-radius: 25px;
+  height: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.my_card-body h5 {
+  color: black;
+  text-align: center;
+}
+
+.card-logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 75%;
+  max-height: 75%;
+}
+
+.plus {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 50%;
+  max-height: 50%;
+
+}
+
+/* DoS Styles
+-------------------------------------------------- */
+.my_card_DoS {
+  margin: 10px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  min-width: 300px;
+  min-height: 300px;
+}
+
+.Edit_X {
+  min-width: 300px;
+  min-height: 620px;
+  margin: 10px;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+.DoS-group {
+  max-height: 300px;
+  margin-bottom: 10px;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}

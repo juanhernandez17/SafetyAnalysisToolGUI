@@ -1,0 +1,34 @@
+{%block table_form%}
+
+<div class="row">
+  <div class="col">
+    <h2>
+      System Name</h2>
+    <input type="text">
+  </div>
+  <div class="col">
+    <h2>Description</h2>
+    <textarea></textarea>
+  </div>
+
+</div>
+<table class="table table-bordered" id='srdtable'>
+  <thead>
+    <tr>
+      <th><input type="text" value="Column1"></th>
+      <th><input type="text" value="Column2"></th>
+      <th><input type="text" value="Column3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><input type="text" value="Value1"></td>
+      <td><input type="text" value="Value2"></td>
+      <td><input type="text" value="Value3"></td>
+    </tr>
+  </tbody>
+</table>
+<button id='addrow'>add row</button>
+<button id='addcol'>add column</button>
+
+{% endblock %}

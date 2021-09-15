@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{%block content%}
+{%load static%}
+<div class="row my_row">
+	{% for key, value in Homepage.items%}
+	{% url key as option1_url %}
+	<div class="col-sm-4">
+		<div class="card my_card ">
+			<div class="card-body my_card-body">
+				<h5 class="card-title">{{value.name}}</h5>
+				<p class="card-text">{{value.description}}</p>
+				<img class="card-logo" src="{% static value.icon %}" alt="SAT">
+				<a href="{{option1_url}}"></a>
+			</div>
+		</div>
+	</div>
+	{%endfor%}
+</div>
+<div class="row my_row">
+	<div class="col-sm-4">
+		<div class="card my_card ">
+			<div class="card-body plus_body">
+
+				<img class="plus" src="{% static 'home/plus.svg' %}" alt="SAT">
+			</div>
+			<a href="{{option1_url}}"></a>
+
+		</div>
+	</div>
+</div>
+
+<script>
+	$(".my_card").click(function () {
+		window.location = $(this).find("a").attr("href");
+		return false;
+	});
+</script>
+{% endblock %}

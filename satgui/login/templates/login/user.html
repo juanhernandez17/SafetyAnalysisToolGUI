@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block navbar %} 
+{% comment '' %}
+  this removes navbar from the user login option page
+{% endcomment %}
+{% endblock navbar %}
+{%block contentnocontainer%}
+
+</div>
+
+<div class=" wrapper">
+  <!-- Sidebar-->
+  {% url 'login' as login_url %}
+  {% url 'admin:index' as admin_url %}
+  {% url 'home' as home_url %}
+  {% url 'register' as register_url %}
+  <div class="sidebar">
+    <img class="SAT_logo" src="{% static 'home/logo.svg' %}" alt="SAT"></img>
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link active" href="{{login_url}}">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{register_url}}">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{home_url}}">Guest</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{admin_url}}">Admin</a>
+      </li>
+    </ul>
+  </div>
+
+</div>
+{% block form %}
+{% endblock form %}
+
+{% endblock %}

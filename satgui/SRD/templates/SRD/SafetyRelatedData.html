@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static%}
+{%block content%}
+<script src="{% static 'js/srd.js' %}"></script>{% comment %} used for form/list manipulation {% endcomment %}
+
+<div class="row">
+  <div class="col-3 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        <h1> Safety Related Data: </h1>
+        <div class="row">
+          <div class="col">
+            <div class="list-group" id="list-tab" role="tablist">
+
+              <a class="list-group-item list-group-item-action active" id="list-home-list" data-toggle="list"
+                href="#list-home" role="tab" aria-controls="home">Add data to Table Template</a>
+
+              <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
+                href="#list-profile" role="tab" aria-controls="profile">Create a New Table</a>
+
+              <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
+                href="#list-settings" role="tab" aria-controls="settings">Edit Table Privacy</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-9 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        <div class="tab-content" id="nav-tabContent">
+          <div class="tab-pane fade show active list-group" id="list-home" role="tabpanel"
+            aria-labelledby="list-home-list">
+         
+            <div class="row">
+            <a class="" href=""><img class="ttpic" src="{% static 'SRD/TT1.png'%}" alt="Template Table 1"></a>
+          </div>
+         
+          <div class= "row">
+            <a class="" href=""><img class="ttpic" src="{% static 'SRD/TT2.png'%}" alt="Template Table 2"></a>
+          </div> 
+        
+          <div class="row">
+          <a class="" href=""><img class="ttpic" src="{% static 'SRD/TT3.png'%}" alt="Template Table 3"></a>
+        </div>
+          </div>
+          <div class="tab-pane fade" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
+          	{% block table_form %}
+          	{% include  'SRD/table_form.html' %}
+          	{% endblock %}
+
+          </div>
+          <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...
+          </div>
+          <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">...
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{%block content%}
+
+{%load static%}
+{% csrf_token %}
+<script src="{% static 'js/Systems.js' %}"></script>{% comment %} used for form/list manipulation {% endcomment %}
+
+<div class="row my_row">
+    {% for value in systemlist%}
+    <div class="col-sm-4" style="padding-bottom: 15px;">
+
+        <div class=" border-primary my_card card bg-light">
+            <div class="card-header">{{value.name}}
+                <div class="btn-group float-right" style='padding-left: 5px;'>
+                    <button class="btn btn-danger btn-sm" id="delete-{{value.id}}"><i
+                            class="material-icons">delete</i></button>
+                </div>
+                <a class="btn-group float-right" href="{% url 'getfile' id=value.id %}">
+                    <button class="btn btn-primary btn-sm" id="delete-{{value.id}}"><i
+                            class="material-icons">cloud_download</i></button>
+                </a>
+
+            </div>
+            <div class="card-body" id='card-{{value.id}}'>
+                {% if value.description %}
+                <p class="card-text">
+
+                    {{value.description}}
+                </p>
+                {% else %}
+                <p class="card-text" style='opacity: 0.25;'>System Description is Empty</p>
+                {% endif %}
+
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Created {{value.date_posted}}</small>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{% endblock %}

@@ -1,0 +1,111 @@
+<!-- Modal -->
+<div class="modal hide " id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">File Upload</h5>
+                <button type="button" class="close" data-dismiss="modal" id="loading" aria-label=" Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+
+                <form id="fileform" enctype="multipart/form-data" method="post" action="{% url 'fileform'%}">
+                    {% csrf_token %}
+                    <div id="div_id_file" class="input-group">
+                        <div class="input-group-prepend">
+                            <button class=" btn btn-success" id='example'>
+                                Example
+                            </button>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" name="file" class="custom-file-input form-control-file" required=""
+                                id="id_file">
+                            <label class="custom-file-label" for="id_file">Choose file</label>
+                        </div>
+                    </div>
+                    <p>
+                        FILE FORMAT: <br>
+                        - No blank lines <br>
+                        - Lines starting with # are dividers and must be included in the file, remove
+                        "(Optional)" <br>
+                        - Only .txt files<br>
+                        - If the file is not formatted correctly it wont be fully loaded into the
+                        database
+                    </p>
+
+
+                    <div id="loading">
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <p>
+                                    #Component_Description (Optional) <br>
+                                    Component_Name1, Description <br>
+                                    #Component_States <br>
+                                    Component_Name1, State1 , State2 <br>
+                                    #Component_States_Description (Optional) <br>
+                                    Component_Name1, State1 , Description <br>
+                                    #Component_Properties <br>
+                                    Component_Name1, Property1, Property2 <br>
+                                    #Component_Properties_Description (Optional) <br>
+                                    Component_Name1, Property1 , Description <br>
+                                    #Environmental_entities_description (Optional) <br>
+                                    Environmental_entity1, Description <br>
+                                    #Environmental_entities_States <br>
+                                    Environmental_entity1, State1, State2 <br>
+                                    #Environmental_entities_States_Description (Optional) <br>
+                                    Environmental_entity1, State1 , Description <br>
+                                    #Environmental_entities_Properties <br>
+                                    Environmental_entity1, Property1, Property2 <br>
+                                    #Environmental_entities_Properties_Description (Optional) <br>
+                                    Environmental_entity1, Property1 , Description <br>
+                                    #Transition_rules <br>
+                                    <Transition Condition> [Guard condition] : Component_Name1(Current
+                                        state) ->
+                                        Component_Name1(Next
+                                        state) <br>
+                                        Environmental_entity1(State1) : Component_Name1(State1) ->
+                                        Component_Name1(State2) <br>
+                                        Environmental_entity1(State1) [Component2 _Property1<val ] :
+                                            Component_Name1(State1) ->
+                                            Component_Name1(State2) <br>
+                                            Environmental_entity(State1) AND
+                                            Environmental_entity(State2) :
+                                            Component_Name1(State2) ->
+                                            Component_Name1(State1) <br>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-block ml-auto" type="submit"
+                        id="formsubmit">Upload</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    $('#id_file').on('change', function () {
+        //get the file name
+        var fileName = $(this).val().replace('C:\\fakepath\\', " ");
+        //replace the "Choose a file" label
+        $(this).next('.custom-file-label').html(fileName);
+    })
+    $('#formsubmit').on('click', function () {
+        //get the file name
+        $('#fileform').submit()
+
+        $('#loading').html(
+            "<div class='spinner-border' role='status'> <span class='sr-only'> Loading... </span></div>"
+        );
+    })
+    $('#example').on('click', function () {
+        //get the file name
+        $('.collapse').collapse('toggle')
+
+    })
+</script>

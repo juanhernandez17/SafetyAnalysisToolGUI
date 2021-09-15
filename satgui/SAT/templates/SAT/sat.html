@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% load crispy_forms_tags %}
+{%block content%}
+<script src="{% static 'js/sat.js' %}"></script>{% comment %} used for form/list manipulation {% endcomment %}
+<div class="row">
+	<div class="col-sm-10">
+		<h1>Safety Analysis Tool:</h1>
+	</div>
+	<div class="col-sm-2">
+		<button class="btn btn-secondary" id="startanal" disabled>Start Analysis</button>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6" id="syscont">
+		<div class="card">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-sm-10">
+						<h2 class="card-title">System List</h2>
+					</div>
+					<div class="col-sm-2">
+						<a href="{% url 'DoS' %}"><button class="btn btn-primary btn-sm"><i
+									class="material-icons">edit</i></button></a>
+					</div>
+				</div>
+				<div class="list-group" id="sysList">
+					{% for k in data %}
+					<div class="list-group-item list-group-item-action" id="list-{{k.id}}" data-toggle="list"
+						aria-controls="{{k.id}}">
+						<span id="name-{{k.id}}">{{ k.name }}</span>
+						<div class="btn-group float-right">
+							<button class="btn btn-danger btn-sm" id="delete-{{k.id}}"><i
+									class="material-icons">delete</i></button>
+						</div>
+					</div>
+					<div style="display: none;" id="description-{{k.id}}">{{k.description}}</div>
+
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="card">
+			<div class="card-body">
+
+				<h2 class="card-title">System Form</h2>
+
+				<form id="createS" method="POST">
+					{% csrf_token %}
+					{{ form|crispy }}
+					<button class="btn btn-success" type="submit"><i class="material-icons">save</i></button>
+
+					<button class="btn btn-info float-right" id="clear">Clear Form</button>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

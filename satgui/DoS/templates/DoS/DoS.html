@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{%block content%}
+{% load crispy_forms_tags %}
+<script src="{% static 'js/DoS.js' %}"></script>{% comment %} used for form/list manipulation {% endcomment %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12">
+                        <div class="my_card_DoS">
+                            <h1>System Selection</h1>
+                            <div class="DoS-group list-group" id="li-sys">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="Edit_X">
+                            <h1 id="formt">(System) Edit</h1>
+                                 <form   id="my_form">
+                                   
+                                    <label for="FormControlInput1">Name</label>
+                                    <input type="text" class="form-control" id="FormControlInput1">
+                                    <label for="FormControlTextarea1">Description</label>
+                                    <textarea class="form-control" id="FormControlTextarea1" rows="5"></textarea>
+                                    <button class="btn btn-success" id ="sub" type="submit"><i class="material-icons">save</i></button>
+                                    <button class="btn btn-danger btn-sm" id="del"><i class="material-icons">delete</i></button>
+                                    <button class="btn btn-info float-right" id="clear">Clear Form</button>
+                                    <input type="hidden" id="system" name="sys" value="0">
+                                    <input type="hidden" id="parent" name="p" value="0">
+                                    <input type="hidden" id="num" name="n" value="0">
+                                    <input type="hidden" id="type" name="gp" value="0">
+                                  
+                                </form>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- middle column of DOS page-->
+        <div class="col-4">
+            <div class="container-fluid">
+                <div class=row>
+                    <div class="col-12">
+                        <div class="my_card_DoS" id ="comp_card">
+                            <h1>Components</h1>
+                            <div class="DoS-group list-group" id="li-com">
+                            </div>
+                            <button class="btn btn-primary btn-sm" id="comp_but"><i class="material-icons">add</i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class=row>
+                    <div class="col-12">
+                        <div class="my_card_DoS">
+                            <h1>Component States</h1>
+                            <div class="DoS-group list-group" id="li-coms">
+
+                            </div>
+                            <button class="btn btn-primary btn-sm" id="comps_but"><i class="material-icons">add</i></button>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class=row>
+                    <div class="col-12">
+                        <div class="my_card_DoS">
+                            <h1>Component Properties</h1>
+                            <div class="DoS-group list-group" id="li-comp">
+
+                            </div>
+                            <button class="btn btn-primary btn-sm" id="compp_but"><i class="material-icons">add</i></button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!------------------------------------------->
+        <!--Last Colum of DOS page-->
+        <div class="col-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="my_card_DoS "id ="env_card">
+                            <h1>Environmental Entities</h1>
+                            <div class="DoS-group list-group" id="li-env-ent">
+
+                            </div>
+                            <button class="btn btn-primary btn-sm" id="env_but"><i class="material-icons">add</i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="my_card_DoS">
+                            <h1>Environmental States</h1>
+                            <div class="DoS-group list-group" id="li-env-states">
+
+                            </div>
+                            <button class="btn btn-primary btn-sm" id="envs_but"><i class="material-icons">add</i></button>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="my_card_DoS">
+                            <h1>Environmental Properties</h1>
+                            <div class="DoS-group list-group" id="li-env-prop">
+
+                            </div>
+                            <button class="btn btn-primary btn-sm" id="envp_but"><i class="material-icons">add</i></button>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

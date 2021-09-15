@@ -1,0 +1,153 @@
+/*#
+#447e9b
+79aec8
+417690
+
+*/
+/* DASHBOARD */
+body {
+    background: #ffffff;
+}
+
+nav {
+    background: #0051ff;
+    /* background: #ffffff; */
+}
+
+.nav-link {
+    color: aliceblue;
+}
+#header {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background: #0051ff;
+    color: #ffc;
+    overflow: hidden;
+}
+.navlogo {
+    height: 2.4em;
+    width: 4.5em;
+    /* background-color: rgb(0, 0, 0); */
+    display: block;
+}
+
+.button.default,input[type=submit].default,.submit-row input.default {
+    float: right;
+    border: none;
+    font-weight: 400;
+    background: #0051ff;
+}
+
+.object-tools a:focus,
+.object-tools a:hover {
+    background-color: #0051ff;
+}
+
+.calendar td a:active,
+.timelist a:active {
+    background: #0051ff;
+    color: white;
+}
+
+div.breadcrumbs {
+    background: #0051ff;
+    padding: 10px 40px;
+    border: none;
+    font-size: 14px;
+    color: #c4dce8;
+    text-align: left;
+}
+
+.select2-container--admin-autocomplete .select2-results__option--highlighted[aria-selected] {
+    background-color: #0051ff;
+    color: white;
+}
+.button,
+input[type=submit],
+input[type=button],
+.submit-row input,
+a.button {
+    background: #0051ff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+.module h2,
+.module caption,
+.inline-group h2 {
+    margin: 0;
+    padding: 8px;
+    font-weight: 400;
+    font-size: 13px;
+    text-align: left;
+    background: #0051ff;
+    color: #fff;
+}
+div.breadcrumbs {
+    background: #0051ff;
+    padding: 10px 40px;
+    border: none;
+    font-size: 14px;
+    color: #c4dce8;
+    text-align: left;
+}
+#user-tools a:focus,
+#user-tools a:hover {
+    text-decoration: none;
+    border-bottom-color: #0051ff;
+    color: #0051ff;
+}
+#user-tools a:focus,
+#user-tools a:hover {
+    text-decoration: none;
+    border-bottom-color: #0051ff;
+    color: #0051ff;
+}
+.paginator a:link,
+.paginator a:visited {
+    padding: 2px 6px;
+    background: #0051ff;
+    text-decoration: none;
+    color: #fff;
+}
+.selector-chosen h2 {
+    background: #0051ff;
+    color: #fff;
+}
+.calendar td.selected a {
+    background: #0051ff;
+    color: #fff;
+}
+.calendar td a:focus,
+.timelist a:focus,
+.calendar td a:hover,
+.timelist a:hover {
+    background: #0051ff;
+    color: white;
+}
+a:link,
+a:visited {
+    color: #0051ff;
+    text-decoration: none;
+}
+table thead th.sorted .sortoptions a.sortremove:focus:after,
+table thead th.sorted .sortoptions a.sortremove:hover:after {
+    color: #0051ff;
+}
+fieldset.collapsed .collapse-toggle {
+    background: transparent;
+    display: inline;
+    color: #0051ff;
+}
+a.active.selector-chooseall:focus,
+a.active.selector-clearall:focus,
+a.active.selector-chooseall:hover,
+a.active.selector-clearall:hover {
+    color: #0051ff;
+}
